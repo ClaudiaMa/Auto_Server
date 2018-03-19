@@ -1,9 +1,12 @@
 package auto_server.jpa;
 
-/**
- *
- * @author Claudia
- */
-public class KundenBean {
+import auto_server.ejb.Kunde;
+
+public class KundenBean extends EntityBean<Kunde, Long> {
     
-}
+    public KundenBean(){
+        super(Kunde.class);
+    }
+    
+} 
+

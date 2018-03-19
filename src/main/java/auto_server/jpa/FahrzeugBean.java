@@ -1,9 +1,11 @@
 package auto_server.jpa;
 
-/**
- *
- * @author Claudia
- */
-public class FahrzeugBean {
+import auto_server.ejb.Fahrzeug;
+
+public class FahrzeugBean extends EntityBean<Fahrzeug, Long> {
+    
+    public FahrzeugBean(){
+        super(Fahrzeug.class);
+    }
     
 }
