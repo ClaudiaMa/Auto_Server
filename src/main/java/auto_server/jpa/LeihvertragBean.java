@@ -1,6 +1,6 @@
 package auto_server.jpa;
 
-import auto_server.ejb.Fahrzeug;
+import auto_server.ejb.Fahrzeug ;
 import auto_server.ejb.Kunde;
 import auto_server.ejb.Leihvertrag;
 import java.util.Date;
@@ -20,23 +20,5 @@ public class LeihvertragBean extends EntityBean<Leihvertrag, Long> {
                 .getResultList();
     }
 
-    public Leihvertrag ausleihen(Kunde kunde, Fahrzeug fahrzeug, Date beginndatum, Date enddatum) {
-        Boolean ausleihenmoeglich = true;
-
-        List<Leihvertrag> vertragezwischen = em.createQuery("SELECT l FROM Leihvertrag WHERE l.beginndatum > :kunde ORDER BY l.beginndatum").setParameter("beginndatum", beginndatum).setParameter("enddatum", enddatum).getResultList();
-
-        if (vertragezwischen.isEmpty()) {
-            List<Leihvertrag> außerhalb = em.createQuery("SELECT l FROM Leihvertrag WHERE l.kunde = :kunde ORDER BY l.beginndatum").setParameter("kunde", kunde).getResultList();
-        }
-
-        if (ausleihenmoeglich) {
-            Leihvertrag leihvertrag = new Leihvertrag(kunde, fahrzeug, beginndatum, enddatum);
-            return this.saveNew(leihvertrag);
-
-        } else {
-
-            return null;
-
-        }
-    }
+    
 }

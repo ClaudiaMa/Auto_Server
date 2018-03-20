@@ -24,7 +24,6 @@ public class Fahrzeug implements Serializable {
     private long id = 0L;
     
     @OneToMany
-    @NotNull
     private List<Leihvertrag> leihverträge = new ArrayList();
     
     @NotNull
@@ -37,13 +36,13 @@ public class Fahrzeug implements Serializable {
     
     @NotNull
     @Size(min = 1)
-    private int baujahr = 0;
+    private String baujahr = "";
    
     
     public Fahrzeug(){
         
     }
-    public Fahrzeug(long id, String hersteller, String modell, int baujahr){
+    public Fahrzeug(long id, String hersteller, String modell, String baujahr){
        this.id = id;
        this.hersteller = hersteller;
        this.modell = modell;
@@ -67,7 +66,7 @@ public class Fahrzeug implements Serializable {
         return modell;
     }
     
-    public int getBaujahr() {
+    public String getBaujahr() {
         return baujahr;
     }
     
@@ -87,7 +86,7 @@ public class Fahrzeug implements Serializable {
         this.modell = modell;
     }
     
-    public void setBaujahr(int baujahr) {
+    public void setBaujahr(String baujahr) {
         this.baujahr = baujahr;
     }
 //</editor-fold>

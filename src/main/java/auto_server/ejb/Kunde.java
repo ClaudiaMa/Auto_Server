@@ -20,7 +20,6 @@ public class Kunde implements Serializable {
     private long id = 0L;
     
     @OneToMany
-    @NotNull
     private List<Leihvertrag> leihverträge = new ArrayList();
     
     @NotNull
@@ -37,11 +36,11 @@ public class Kunde implements Serializable {
    
     @NotNull
     @Size(min = 1)
-    private int hausnummer = 0;
+    private String hausnummer = "";
     
     @NotNull
     @Size(min = 1)
-    private int plz = 0;
+    private String plz = "";
     
     @NotNull
     @Size(min = 1)
@@ -54,7 +53,7 @@ public class Kunde implements Serializable {
     public Kunde(){
         
     }
-    public Kunde(long id, String vorname, String nachname, String strasse, int hausnummer, int plz, String ort, String land){
+    public Kunde(long id, String vorname, String nachname, String strasse, String hausnummer, String plz, String ort, String land){
        this.id = id;
        this.vorname = vorname;
        this.nachname = nachname;
@@ -86,11 +85,11 @@ public class Kunde implements Serializable {
         return strasse;
     }
     
-    public int getHausnummer() {
+    public String getHausnummer() {
         return hausnummer;
     }
     
-    public int getPlz() {
+    public String getPlz() {
         return plz;
     }
     
@@ -122,11 +121,11 @@ public class Kunde implements Serializable {
         this.strasse = strasse;
     }
     
-    public void setHausnummer(int hausnummer) {
+    public void setHausnummer(String hausnummer) {
         this.hausnummer = hausnummer;
     }
     
-    public void setPlz(int plz) {
+    public void setPlz(String plz) {
         this.plz = plz;
     }
     

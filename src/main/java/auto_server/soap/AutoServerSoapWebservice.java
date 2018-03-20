@@ -37,7 +37,7 @@ public class AutoServerSoapWebservice {
     public Fahrzeug createNewFahrzeug(@WebParam(name = "fahrzeug") Fahrzeug fahrzeug) {
         return fahrzeugbean.saveNew(fahrzeug);
     }
-
+/**
     @WebMethod
     @WebResult(name = "leihvertrag")
     public Leihvertrag fahrzeugAusleihen(@WebParam(name = "kunde") Kunde kunde,
@@ -46,7 +46,7 @@ public class AutoServerSoapWebservice {
                              @WebParam(name = "endzeit") Date endzeit) {
         return leihvertragbean.ausleihen(kunde, fahrzeug, beginnzeit, endzeit);
     }
-
+**/
     @WebMethod
     @WebResult(name = "fahrzeug")
     public List<Fahrzeug> fahrzeugAuflisten() {

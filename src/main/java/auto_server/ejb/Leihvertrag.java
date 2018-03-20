@@ -21,11 +21,9 @@ public class Leihvertrag implements Serializable {
     private long id = 0L;
     
     @ManyToOne
-    @NotNull
     private Kunde kunde = null;
     
     @ManyToOne
-    @NotNull
     private Fahrzeug fahrzeug = null;
     
     @NotNull
